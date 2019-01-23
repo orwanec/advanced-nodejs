@@ -1,5 +1,8 @@
 const fs = require('fs');
 
+// here file validation will be now async and trigger an error after
+// the console.log(`Size in KB: is executed
+// Function should be not mixed but rather totally async or sync!!!
 function fileSize (fileName, cb) {
   if (typeof fileName !== 'string') {
     return process.nextTick(
