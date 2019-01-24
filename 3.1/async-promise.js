@@ -1,15 +1,21 @@
 const fs = require('fs');
 
+// Callback + Promise together,
+// added dafault value for cb=() = {} if we want to use it
 const readFileAsArray = function(file, cb = () => {}) {
   return new Promise((resolve, reject) => {
     fs.readFile(file, function(err, data) {
       if (err) {
+        //if we use promise
         reject(err);
+        //if we use callback
         return cb(err);
       }
 
       const lines = data.toString().trim().split('\n');
+      // if we use Promise
       resolve(lines);
+      // if we use callbacks
       cb(null, lines);
     });
   });
