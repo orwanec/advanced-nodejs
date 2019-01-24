@@ -37,7 +37,7 @@ readFileAsArray('./numbers', (err, lines) => {
   const oddNumbers = numbers.filter(number => number % 2 === 1);
   console.log('odd numbers count:', oddNumbers.length);
 });
-
+// with async, we should not forget TRY/ CATCH!
 async function countOdd () {
   try {
     const lines = await readFileAsArray('./numbers');
